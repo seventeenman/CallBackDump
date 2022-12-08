@@ -1,4 +1,5 @@
 # CallBackDump
+
 能过国内杀软的dump lsass进程工具，参考代码链接在下面。
 
 由minidumpCallback实现，对缓冲区中内存做了些修改后再写入磁盘，同时做了一些小细节修改。
@@ -20,6 +21,10 @@ VS2022
 `CallbackDump.exe to` 将lsass进程dump成VM21-6-8.log
 
 `dumpXor.exe VM21-6-8.log 1.bin` 将加密的进程文件解密
+
+# 详解
+
+[Dumping Lsass Process Memory In Different Ways - 跳跳糖](https://tttang.com/archive/1810/)
 
 # 参考链接
 
